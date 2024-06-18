@@ -1,0 +1,47 @@
+.auth {
+    flex: 1;
+    display: flex;
+    padding: 4.5em;
+
+    font-family: Inter;
+    color: black;
+
+    .title {
+        margin: 15px 0;
+    }
+}
+
+.component {
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 2.5em;
+    color: #222
+}
+
+.btn {
+    background-color: #0098d8;
+    padding: 10px 40px;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    transform: .2s;
+
+    font-family: Inter;
+    color: white;
+
+    &:hover {
+        background-color: #0ba6e8;
+    }
+    &:active {
+        background-color: #0285be;
+    }
+}

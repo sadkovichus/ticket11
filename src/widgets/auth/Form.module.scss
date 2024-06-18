@@ -1,0 +1,17 @@
+.form {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--block-color);
+    border-radius: var(--border-radius);
+
+    .cont {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        margin-bottom: 15px;
+
+        font-weight: 400;
+        font-size: 1.5em;
+    }
+}
