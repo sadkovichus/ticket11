@@ -11,7 +11,7 @@ export const RoutesName = {
 } as const;
 
 const Routing = () => {
-  const isAuth = true;
+  const isAuth = false;
   const location = useLocation();
   const navigate = useNavigate();
 
