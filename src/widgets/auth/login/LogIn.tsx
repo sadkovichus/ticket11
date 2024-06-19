@@ -1,11 +1,20 @@
 import s from './LogIn.module.scss';
 import formS from '../Form.module.scss';
 import Input from '../input/Input';
+import axios from 'axios';
 
 const LogIn = () => {
-  const formHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const formHandler = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
+    await axios
+      .post('http://localhost:8000/login', data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

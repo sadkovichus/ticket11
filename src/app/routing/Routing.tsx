@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router';
+import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import { Suspense, lazy, useEffect } from 'react';
 
 const Layout = lazy(() => import('../../pages/layout/Layout'));
@@ -7,7 +7,7 @@ const Auth = lazy(() => import('../../pages/auth/Auth'));
 export const RoutesName = {
   root: '/',
   auth: '/auth',
-  admin: '/addminpanelultradrocherhuizalupadaaaaaaasperma',
+  admin: '/admin',
 } as const;
 
 const Routing = () => {
