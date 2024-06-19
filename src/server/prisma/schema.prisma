@@ -17,10 +17,5 @@ model User {
   id         Int    @id @default(autoincrement())
   email      String @unique
   password   String
-  gender     String
-  name       String
-  guiltyFrom Int
-  guiltyTill Int
-  clas       Int
-  person     Int
+
 }
