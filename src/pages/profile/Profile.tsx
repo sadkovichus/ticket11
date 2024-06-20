@@ -1,19 +1,25 @@
-import QRCode from 'react-qr-code';
+// import QRCode from 'react-qr-code';
 import s from './Profile.module.scss';
-import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../store';
+import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store';
 import useStorage from '../../hooks/useStorage';
-import { StorageName } from '../../app/routing/Routing';
+import { RoutesName, StorageName } from '../../app/routing/Routing';
 import qrImg from '../../../public/Снимок экрана 2024-06-20 211504.png';
+import { useNavigate } from 'react-router';
+import { removeUser } from '../../store/slices/userSlices/userSlice';
 
 const Profile = () => {
   const [isActive, setIsActive] = useState(false);
   const selector = useAppSelector(state => state.userSlice);
   const { storageValue } = useStorage(StorageName.UserData, selector);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(storageValue);
-  }, [storageValue]);
+    const exit = () => {
+        dispatch(removeUser());
+        localStorage.removeItem(StorageName.UserData);
+        navigate(RoutesName.auth, { replace: true });
+    }
 
   return (
     <div className={s.profile}>
@@ -56,6 +62,7 @@ const Profile = () => {
             <p className={s.table_value}>{storageValue.password}</p>
           </li>
         </ul>
+        <button onClick={exit} className={s.exit}>Exit</button>
       </div>
     </div>
   );
