@@ -15,10 +15,6 @@
     "build": {
       "env": {
         "DATABASE_URL": "./src/server/prisma/dev.db"
-      },
-      "commands": {
-        "prebuild": "npm run migrate",
-        "build": "vite build"
       }
     }
   }
