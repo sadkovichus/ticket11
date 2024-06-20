@@ -1,4 +1,4 @@
-import QRCode from 'react-qr-code';
+// import QRCode from 'react-qr-code';
 import s from './Profile.module.scss';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../store';
