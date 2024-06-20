@@ -14,6 +14,15 @@
         font-weight: 400;
         font-size: 1.5em;
     }
+
+    @media (max-width:633px) {
+        .cont {
+            max-width: 100%;
+        }
+        .title {
+            font-size: 1em;
+        }
+    }
 }
 
 .btn {

@@ -1,7 +1,8 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import { Suspense, lazy, useEffect } from 'react';
+import useAuth from '../../hooks/useAuth';
 
-const Layout = lazy(() => import('../../pages/layout/Layout'));
+const Profile = lazy(() => import('../../pages/profile/Profile'));
 const Auth = lazy(() => import('../../pages/auth/Auth'));
 
 export const RoutesName = {
@@ -10,7 +11,12 @@ export const RoutesName = {
   admin: '/admin',
 } as const;
 
+export const StorageName = {
+  UserData: 'usdtt',
+} as const;
+
 const Routing = () => {
+  // const isAuth = useAuth();
   const isAuth = false;
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +29,7 @@ const Routing = () => {
 
   return (
     <Routes>
-      <Route path={`${RoutesName.root}`} element={<Layout />}></Route>
+      <Route path={`${RoutesName.root}`} element={<Profile />}></Route>
       <Route
         path={RoutesName.auth}
         element={

@@ -1,8 +1,9 @@
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import s from './Auth.module.scss';
 import Pattern from '../../types/auth/pattern';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { RoutesName } from '../../app/routing/Routing';
+import useAuth from '../../hooks/useAuth';
 
 const CreateUser = lazy(() => import('../../widgets/auth/create-user/CreateUser'));
 const LogIn = lazy(() => import('../../widgets/auth/login/LogIn'));
@@ -10,6 +11,8 @@ const LogIn = lazy(() => import('../../widgets/auth/login/LogIn'));
 const Auth = () => {
   const [searchParams, _] = useSearchParams();
   const location = useLocation();
+  const auth = useAuth();
+  const navigate = useNavigate();
   const data = (searchParams.get('state') || 'signIn') as 'create' | 'signIn';
 
   const pattern: Pattern = {
@@ -34,6 +37,12 @@ const Auth = () => {
       btn: <button className={s.btn}>Login</button>,
     },
   };
+
+  useEffect(() => {
+    if (auth.status) {
+      navigate(RoutesName.root, { replace: true });
+    }
+  }, [auth]);
 
   return (
     <div className={s.auth}>

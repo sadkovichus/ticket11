@@ -1,13 +1,18 @@
 .auth {
     flex: 1;
     display: flex;
-    padding: 4.5em;
+    padding: 0 4.5em;
+    align-items: center;
 
     font-family: Inter;
     color: black;
 
     .title {
         margin: 15px 0;
+    }
+
+    @media (max-width:633px) {
+        padding: 0 1em;
     }
 }
 
@@ -25,5 +30,12 @@
 .title {
     font-weight: 400;
     font-size: 2.5em;
-    color: #222
+    color: #222;
+
+    @media (max-width:633px) {
+        font-size: 2em;
+    }
+    @media (max-width:350px) {
+        font-size: 1.5em;
+    }
 }

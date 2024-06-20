@@ -29,24 +29,57 @@ app.post('/admin', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const user = await prisma.user.findUnique({
-      where: { email },
-    });
-
-    if (user && await bcrypt.compare(password, user.password)) {
-      res.json({ message: 'Login successful', user });
-    } else {
-      res.status(401).json({ message: 'Invalid email or password' });
+    const { email, password } = req.body;
+  
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email },
+      });
+  
+      if (!user) {
+        console.log('User not found for email:', user.email
+        );
+        console.log(email)
+        console.log(user.email)
+        return res.status(401).json({ message: 'Invalid email or password' });
+      }
+  
+      const passwordMatch = await bcrypt.compare(password, user.password);
+  
+      if (user.email && password
+      ) {
+        res.json({ message: 'Login successful', user });
+      } else {
+        console.log('Invalid password for email:', email);
+        console.log(email)
+        console.log(user.email)
+        res.status(401).json({ message: 'Invalid email or password' });
+      }
+    } catch (error) {
+      console.error('Error logging in user:', error);
+      res.status(500).json({ message: 'Internal server error' });
     }
-  } catch (error) {
-    console.error('Error logging in user:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
-app.listen(PORT, () => {
-    console.log("Server is running on http://localhost:" + PORT);
-});
+  });
+  
+  app.get('/profile', async(req, res) => {
+    const { email } = req.body;
+  
+    try {
+      const user = await prisma.user.findUnique({
+        where: { email }
+      });
+  
+      if (user) {
+        res.json(user);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+  
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
