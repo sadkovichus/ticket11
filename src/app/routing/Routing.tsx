@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import { Suspense, lazy, useEffect } from 'react';
-// import useAuth from '../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 const Profile = lazy(() => import('../../pages/profile/Profile'));
 const Auth = lazy(() => import('../../pages/auth/Auth'));
@@ -17,12 +17,12 @@ export const StorageName = {
 
 const Routing = () => {
   // const isAuth = useAuth();
-  const isAuth = false;
+  const isAuth = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuth && location.pathname === RoutesName.root) {
+    if (!isAuth.status && location.pathname === RoutesName.root) {
       navigate(RoutesName.auth, { replace: true });
     }
   }, [isAuth]);
