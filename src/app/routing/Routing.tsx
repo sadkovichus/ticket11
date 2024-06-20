@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import { Suspense, lazy, useEffect } from 'react';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 
 const Profile = lazy(() => import('../../pages/profile/Profile'));
 const Auth = lazy(() => import('../../pages/auth/Auth'));
