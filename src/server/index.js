@@ -17,7 +17,7 @@ app.post('/admin', async (req, res) => {
   console.log(password)
   
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
     await prisma.user.create({
       data: { email, password},
     });
@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
         return res.status(401).json({ message: 'Invalid email or password' });
       }
   
-      const passwordMatch = await bcrypt.compare(password, user.password);
+      // const passwordMatch = await bcrypt.compare(password, user.password);
   
       if (user.email && password
       ) {
