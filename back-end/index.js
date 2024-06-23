@@ -11,7 +11,7 @@ const PORT = 8000;
 
 // Настройка CORS с конкретным доменом вашего фронтенда
 const corsOptions = {
-  origin: 'https://ticket-nfsf.vercel.app/auth', // замените на ваш домен
+  origin: 'https://ticket-nfsf.vercel.app', // замените на ваш домен
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
