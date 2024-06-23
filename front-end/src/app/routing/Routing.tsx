@@ -45,6 +45,7 @@ const Routing = () => {
           </Suspense>
         }
       />
+      <Route path='*' element={<p>404</p>}/>
     </Routes>
   );
 };

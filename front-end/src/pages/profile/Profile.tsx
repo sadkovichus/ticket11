@@ -61,6 +61,10 @@ const Profile = () => {
             <p className={s.table_title}>Passwort</p>
             <p className={s.table_value}>{storageValue.password}</p>
           </li>
+          <li className={s.klassr}>
+            <p className={s.table_title}>Klasse</p>
+            <p className={s.table_value}>1</p>
+          </li>
         </ul>
         <button onClick={exit} className={s.exit}>Exit</button>
       </div>

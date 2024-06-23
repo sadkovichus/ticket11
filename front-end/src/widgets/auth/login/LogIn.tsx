@@ -18,7 +18,7 @@ const LogIn = () => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     await axios
-      .post('https://ticket-mvib.onrender.com/login', data)
+      .post('http://localhost:8000/login', data)
       .then(async function (response) {
         if (response) {
           await dispatch(setUser(data));
