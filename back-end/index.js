@@ -9,7 +9,13 @@ const bcrypt = require('bcrypt')
 const app = express();
 const PORT = 8000;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://ticket-nfsf.vercel.app/', // замените на ваш домен
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.post('/admin', async (req, res) => {
