@@ -18,7 +18,7 @@ const LogIn = () => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     await axios
-      .post('https://ticket-tuzb.onrender.com/login', data)
+      .post('https://ticket-e1k7.onrender.com/login', data)
       .then(async function (response) {
         if (response) {
           await dispatch(setUser(data));
