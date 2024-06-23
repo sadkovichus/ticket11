@@ -14,7 +14,7 @@ const CreateUser = () => {
     setLoading(true);
     const data = await Object.fromEntries(new FormData(e.currentTarget));
     await axios
-      .post('https://ticket-mvib.onrender.com/admin', data)
+      .post('https://ticket-tuzb.onrender.com/admin', data)
       .then(function (response) {
         console.log(response);
       })
