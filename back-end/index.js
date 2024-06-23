@@ -21,13 +21,13 @@ app.use(cors())
 app.use(bodyParser.json());
 
 app.post('/admin', async (req, res) => {
-  const { email, password, gender } = req.body;
+  const { email, password, gender, name } = req.body;
   console.log(password);
   
   try {
     // const hashedPassword = await bcrypt.hash(password, 10);
     await prisma.user.create({
-      data: { email, password, gender },
+      data: { email, password, gender, name },
     });
     res.json({ message: "User saved successfully" });
   } catch (error) {
