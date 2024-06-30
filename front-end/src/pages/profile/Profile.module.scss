@@ -8,10 +8,14 @@
     color: #222;
 }
 
+.logo {
+    margin-bottom: 10px;
+}
+
 .container {
     max-width: 1050px;
     width: 100%;
-    margin: 0 auto 200px auto;
+    margin: 0 auto;
 }
 
 .title {
@@ -34,10 +38,11 @@
     display: flex;
     flex-direction: column;
 
+    font-size: 14px;
     li {
         width: 100%;
         display: flex;
-        padding: 5px 5px;
+        padding: 7px 5px;
         border-radius: 5px;
     }
 
@@ -55,16 +60,66 @@
     .table_value {
         width: 60%;
         word-break: break-all;
+        display: flex;
+
+
+        span {
+            margin-left: 10px;
+
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            width: 70%;
+            margin-left: auto;
+        }
+        
+        // @media (max-width: 447px) {
+        //     justify-content: end;
+        // }
+    }
+
+    .ablauf .table_value {
+        text-decoration: underline;
     }
 }
 
 .qrcode {
-    max-width: 100px;
-    max-height: 100px;
+    position: relative;
+    width: 100%;
+    max-height: 200px;
     margin: 20px 0;
+    display: flex;
+    align-items: end;
 
-    img {
-        width: 100%;
+    // img {
+    //     position: relative;
+    //     // right: -12px;
+    //     width: 200px;
+    //     margin: 0 auto;
+    // }
+    
+    .qr {
+        margin: 0 auto;
+
+        @media (max-width: 298px) {
+            margin: 0;
+        };
+    }
+
+    .price {
+        position: absolute;
+        display: flex;
+        // margin-left: auto;
+        right: 0;
+        bottom: 0;
+        
+        color: #0098d8;
+        span {
+            color: black;
+            font-weight: 500;
+            font-size: 20px;
+        }
     }
 }
 
@@ -81,6 +136,7 @@
     transition-duration: .2s;
     visibility: hidden;
     opacity: 0;
+    z-index: 1;
 }
 
 .active_back {

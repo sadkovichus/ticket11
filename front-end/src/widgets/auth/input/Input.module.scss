@@ -16,3 +16,46 @@
         font-size: 1em;
     }
 }
+
+.option_container {
+    position: relative;
+}
+
+.options {
+    position: absolute;
+    top: 105%;
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+    padding: .5em;
+    display: flex;
+    transition-duration: .5s;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+
+    li  {
+        padding: 6px 0;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid #dbdbdb;
+    }
+
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    background-color: white;
+}
+
+.active_options {
+    opacity: 1;
+    visibility: visible;
+}

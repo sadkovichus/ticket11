@@ -13,15 +13,16 @@ const CreateUser = () => {
     if (loading) return false;
     setLoading(true);
     const data = await Object.fromEntries(new FormData(e.currentTarget));
+    console.log(data);
     await axios
       .post('http://localhost:8000/admin', data)
       .then(function (response) {
         console.log(response);
+        setIsRegister(true);
       })
       .catch(function (error) {
         console.log(error);
       });
-    setIsRegister(true);
     setLoading(false);
   };
 
@@ -37,6 +38,7 @@ const CreateUser = () => {
       <Input inputHandle={inputSubmit} name='name' classNameCont={formS.cont} placeholder='Alex' topText='User Name' />
       <Input inputHandle={inputSubmit} name='email' classNameCont={formS.cont} placeholder='email@info.com' topText='Email*' />
       <Input inputHandle={inputSubmit} name='password' classNameCont={formS.cont} placeholder='dAmNmO!nAoBiZPi?' topText='Password*' />
+      <Input options={['Herr', 'Frau']} name='gender' classNameCont={formS.cont} placeholder='Herr' topText='Geschlecht' />
       <button className={formS.btn}>{loading ? 'Loading...' : 'Registrieren'}</button>
       {isRegister && <p className={s.succes}>Account erstellt ☑</p>}
     </form>

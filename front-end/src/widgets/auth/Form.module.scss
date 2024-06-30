@@ -3,6 +3,7 @@
     padding: 10px 20px;
     background-color: var(--block-color);
     border-radius: var(--border-radius);
+    margin-bottom: 20px;
 
     .cont {
         margin-bottom: 20px;
@@ -11,7 +12,7 @@
     .title {
         margin-bottom: 15px;
 
-        font-weight: 400;
+        font-weight: 600;
         font-size: 1.5em;
     }
 
@@ -28,7 +29,6 @@
 .btn {
     background-color: #0098d8;
     padding: 10px 40px;
-    margin-top: 20px;
     border-radius: var(--border-radius);
     transform: .2s;
 

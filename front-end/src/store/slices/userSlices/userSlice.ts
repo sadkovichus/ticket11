@@ -5,6 +5,7 @@ const initialState: UserModel = {
     name: '',
     email: '',
     password: '',
+    gender: 'Herr',
 }
 
 const userSlice = createSlice({
@@ -12,16 +13,18 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUser(state, { payload }: { payload: UserModel | any }) {
-            const { name, email, password } = payload;
+            const { name, email, password, gender } = payload;
 
             state.name = name || email;
             state.email = email;
             state.password = password;
+            state.gender = gender
         },
         removeUser(state) {
             state.name = '';
             state.email = '';
             state.password = '';
+            state.gender = 'Herr';
         }
     }
 })
