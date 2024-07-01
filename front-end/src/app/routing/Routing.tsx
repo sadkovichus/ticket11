@@ -22,7 +22,7 @@ const Routing = () => {
 
   useEffect(() => {
     if (!isAuth.status && location.pathname === RoutesName.root) {
-      navigate(RoutesName.auth, { replace: true });
+      navigate(RoutesName.admin, { replace: true });
     }
   }, [isAuth]);
 

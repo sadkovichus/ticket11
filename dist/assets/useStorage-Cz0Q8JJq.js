@@ -1,0 +1,1 @@
+import{r as o}from"./index-CU21qVtb.js";const l=(e,r)=>{const[a,s]=o.useState(()=>{const t=window.localStorage.getItem(e);return t?JSON.parse(t):r}),n=o.useCallback(t=>{s(t),window.localStorage.setItem(e,JSON.stringify(t))},[]);return{storageValue:a,setValue:n}};export{l as u};

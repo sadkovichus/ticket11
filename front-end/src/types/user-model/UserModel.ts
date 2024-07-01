@@ -3,4 +3,6 @@ export type UserModel = {
     email: string;
     password: string;
     gender: 'Herr' | 'Frau';
+    dateBert: string;
+    dateNow: string;
 }

@@ -21,6 +21,7 @@ const LogIn = () => {
       .post('http://localhost:8000/login', data)
       .then(async function (response) {
         if (response) {
+          console.log(response.data.user);
           await dispatch(setUser(response.data.user));
           setValue(response.data.user);
           navigate(RoutesName.root, { replace: true });
