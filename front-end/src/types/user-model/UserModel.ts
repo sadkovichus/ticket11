@@ -5,4 +5,5 @@ export type UserModel = {
     gender: 'Herr' | 'Frau';
     dateBert: string;
     dateNow: string;
+    qr:string;
 }

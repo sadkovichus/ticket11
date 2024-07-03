@@ -16,12 +16,12 @@ export const StorageName = {
 } as const;
 
 const Routing = () => {
-  const isAuth = useAuth();
+  const isAuth = true;
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuth.status && location.pathname === RoutesName.root) {
+    if (!isAuth && location.pathname === RoutesName.root) {
       navigate(RoutesName.admin, { replace: true });
     }
   }, [isAuth]);

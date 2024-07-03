@@ -6,6 +6,9 @@ const initialState: UserModel = {
     email: '',
     password: '',
     gender: 'Herr',
+    dateBert: '',
+    dateNow: '',
+    qr: ''
 }
 
 const userSlice = createSlice({
@@ -25,6 +28,9 @@ const userSlice = createSlice({
             state.email = '';
             state.password = '';
             state.gender = 'Herr';
+            state.dateBert = '';
+            state.dateNow = '';
+            state.qr = '';
         }
     }
 })
