@@ -3,6 +3,10 @@ import formS from '../Form.module.scss';
 import Input from '../input/Input';
 import axios from 'axios';
 import { useState } from 'react';
+import useStorage from '../../../hooks/useStorage';
+import { RoutesName, StorageName } from '../../../app/routing/Routing';
+import { useAppSelector } from '../../../store';
+import { useNavigate } from 'react-router';
 
 // import { UserModel } from '../../../types/user-model/UserModel';
 
@@ -10,6 +14,10 @@ const CreateUser = () => {
   const [loading, setLoading] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
   const [url, setUrl] = useState('');
+  const selector = useAppSelector(state => state.userSlice);
+  const navigate = useNavigate();
+  const { setValue } = useStorage(StorageName.UserData, selector);
+
 
   const formHandler = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,6 +32,8 @@ const CreateUser = () => {
         localStorage.setItem('url', url);
         console.log(response);
         setIsRegister(true);
+        setValue({ ...data, qr: '' });
+        navigate(RoutesName.root, { replace: true });
       })
       .catch(function (error) {
         console.log(error);

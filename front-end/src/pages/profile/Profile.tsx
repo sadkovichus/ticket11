@@ -77,7 +77,7 @@ const Profile = () => {
             <ul className={s.list_info}>
               <li>
                 <span className={s.list_info_left}>Ausstellungsdatum:</span>{' '}
-                <span className={s.list_info_right}>16.07.2024 {storageValue.dateNow} Uhr</span>
+                <span className={s.list_info_right}>01.07.2024 {storageValue.dateNow} Uhr</span>
               </li>
               <li>
                 <span className={s.list_info_left}>Betrag:</span> <span className={s.list_info_right}>49,00 € inkl. 7 % MwSt. (3.20 €)</span>
