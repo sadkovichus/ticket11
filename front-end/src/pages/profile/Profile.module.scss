@@ -25,6 +25,7 @@
 
 .logos {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     div {
@@ -46,6 +47,7 @@
     gap: 4px;
 
     font-size: 10px;
+    font-weight: 500;
 }
 
 .info_about_ticket {
@@ -53,6 +55,7 @@
 
     .info {
         display: flex;
+        align-items: center;
         justify-content: space-between;
     }
 
@@ -92,6 +95,7 @@
         justify-content: space-between;
         width: 100%;
         max-width: 200px;
+        margin-top: 5px;
 
         span {
             display: flex;
@@ -112,13 +116,13 @@
     margin-right: 30px;
 
     img {
-        max-width: 190px;
+        max-width: 224px;
     }
 
     p {
         margin-top: 10px;
 
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 500;
     }
 }
@@ -169,7 +173,10 @@
     }
 
     a {
+        margin-left: 2px;
+
         color: rgb(73, 43, 226);
+        text-decoration: underline;
     }
 
     .transdev {

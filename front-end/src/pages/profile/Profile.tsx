@@ -41,9 +41,9 @@ const Profile = () => {
         <section className={s.first_info}>
           <h1 className={s.title}>Rechnurvempfänger</h1>
           <div className={s.sub_info}>
-            <p>Klaus Sefert</p>
+            <p>Klaus Seifert</p>
             <p>Piesberger Str. 78</p>
-            <p>49090 Osnabruck</p>
+            <p>49090 Osnabrück</p>
           </div>
         </section>
         <section className={s.info_about_ticket}>
@@ -86,7 +86,7 @@ const Profile = () => {
                 <span className={s.list_info_left}>Zahlungsart:</span> <span className={s.list_info_right}>SEPA-Einzug</span>
               </li>
               <li>
-                <span className={s.list_info_left}>Bestellnummec:</span> <span className={s.list_info_right}>DTTDX1468305</span>
+                <span className={s.list_info_left}>Bestellnummer:</span> <span className={s.list_info_right}>DTTDX1468305</span>
               </li>
               <li>
                 <span className={s.list_info_left}>Ticketnummer:</span> <span className={s.list_info_right}>DT8YVuvd</span>
