@@ -1,0 +1,96 @@
+ <div className={s.profile}>
+      <div className={s.container}>
+        <header className={s.logos}>
+          <div className={s.transdev}>
+            <img src={transDev} alt='' />
+          </div>
+          <div className={s.dticket}>
+            <img src={dticket} alt='' />
+          </div>
+        </header>
+        <section className={s.first_info}>
+          <h1 className={s.title}>Rechnurvempfänger</h1>
+          <div className={s.sub_info}>
+            <p>Klaus Seifert</p>
+            <p>Piesberger Str. 78</p>
+            <p>49090 Osnabrück</p>
+          </div>
+        </section>
+        <section className={s.info_about_ticket}>
+          <h1 className={s.title}>Deutschland-Ticket</h1>
+          <div className={s.info}>
+            <div className={s.grey_cart}>
+              <div className={s.top}>
+                <p className={s.info_title}>Gültigkeit:</p>
+                <p className={` ${s.top_value} ${s.info_value}`}>bundesweit 01.07.2024 - 01.08.2024 03:00</p>
+              </div>
+              <div className={s.bottom}>
+                <p className={`${s.bottom_title} ${s.info_title}`}>Ticketinhaber:in</p>
+                <p className={`${s.bottom_value} ${s.info_value}`}>
+                  Vomame: <span>{storageValue.name.split(' ')[0]} </span>
+                </p>
+                <p className={`${s.bottom_value} ${s.info_value}`}>
+                  Nachname: <span>{storageValue.name.split(' ')[1]} </span>
+                </p>
+                <p className={`${s.bottom_value} ${s.info_value}`}>
+                  Geburtsdatum: <span>{storageValue.dateBert} </span>
+                </p>
+              </div>
+            </div>
+            <div className={s.qrcode}>
+              {localStorage.getItem('url') && <img src={localStorage.getItem('url') as string} alt='' />}
+              <p>Barcode bitte nicht knicken!</p>
+            </div>
+          </div>
+          <div className={s.payment_information}>
+            <h1 className={s.title}>Zahlungsinformationen</h1>
+            <ul className={s.list_info}>
+              <li>
+                <span className={s.list_info_left}>Ausstellungsdatum:</span>{' '}
+                <span className={s.list_info_right}>01.07.2024 {storageValue.dateNow} Uhr</span>
+              </li>
+              <li>
+                <span className={s.list_info_left}>Betrag:</span> <span className={s.list_info_right}>49,00 € inkl. 7 % MwSt. (3.20 €)</span>
+              </li>
+              <li>
+                <span className={s.list_info_left}>Zahlungsart:</span> <span className={s.list_info_right}>SEPA-Einzug</span>
+              </li>
+              <li>
+                <span className={s.list_info_left}>Bestellnummer:</span> <span className={s.list_info_right}>DTTDX1468305</span>
+              </li>
+              <li>
+                <span className={s.list_info_left}>Ticketnummer:</span> <span className={s.list_info_right}>DT8YVuvd</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section className={s.info_for_use}>
+          <p className={s.info_use_title}>Wichtige Hinweisezurnutzung:</p>
+          <ul className={s.info_list}>
+            <li>• Ticket nur gültig in Verbindung mit einem amtlichen Lichtbildausweis. Dieser ist bei der Kontrolle</li>
+            <li>• Ticket nicht übertragbar.</li>
+            <li>
+              • Es gelten die Tarife und Beförderungsbedingungen des genutzten Verkehrsunternehmens. Informationen dazu unter:
+              <a href='https://deutschlandticket.de/legal/tariff' target='_blick'>
+                https://deutschlandticket.de/legal/tariff
+              </a>
+            </li>
+            <li>
+              • Das hinterlegte Konto wird mit dem oben angegebenen Betrag belastet durch die Transdev Vertrieb GmbH (Markt 10, 04109 Leipzig,
+              eingetragen am Amtsgercht Be DE 302 406 726). Der Vertrag für das Abonnement kommt mit der Transdev Verkehr GmbH zustande.
+            </li>
+            <li>
+              • Gilt bundesweit im OPNV und SPNV aller teilnehmenden Verkehrsunternehmen, Landestarife und Verkehrsverbünde sowie im verbundfreien
+              Raum. Nicht gültig im Fernverkehr, Flixbus/Flixtrain. Nicht übertragbar. Keine kostenfreie Mitnahme von Hunden und Fahrrader. Keine
+              unentgeltliche Mitnahme von Personen ab o anren,
+            </li>
+          </ul>
+          <p className={s.transdev}>Transdev Verkehr (Am Silberpalais 1, 47057 Duisburg)</p>
+          <p className={s.mgt}>Geschäftsführer: Henrik Behrens, Ulf Braker, Hartmut Cyrkel, Christian Kleinenhammann, Erik Ryll, Heiko Schütte</p>
+          <p className={s.mgt}>USt-ID-Nr.: DE 239929500</p>
+        </section>
+      </div>
+      <button onClick={exit} className={s.exit}>
+        Exit
+      </button>
+    </div>

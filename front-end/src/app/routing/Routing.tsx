@@ -20,11 +20,11 @@ const Routing = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isAuth.status && location.pathname === RoutesName.root) {
-      navigate(RoutesName.admin, { replace: true });
-    }
-  }, [isAuth]);
+  // useEffect(() => {
+  //   if (!isAuth.status && location.pathname === RoutesName.root) {
+  //     navigate(RoutesName.admin, { replace: true });
+  //   }
+  // }, [isAuth]);
 
   return (
     <Routes>
